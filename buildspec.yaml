@@ -7,7 +7,7 @@ phases:
     commands:
     - echo Logging in to Amazon ECR...
     - aws --version
-    - (Get-ECRLoginCommand).Password | docker login --username AWS --password-stdin 860061945305.dkr.ecr.us-east-1.amazonaws.com
+    - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 860061945305.dkr.ecr.us-east-1.amazonaws.com
     - IMAGE_NAME=audit-app-chandan-mfpe
     - IMAGE_URI=860061945305.dkr.ecr.us-east-1.amazonaws.com/audit-app-chandan-mfpe:latest
     - CONTAINER_NAME=audit-app-chandan-mfpe
